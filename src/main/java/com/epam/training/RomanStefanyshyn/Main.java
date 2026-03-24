@@ -1,8 +1,8 @@
 package com.epam.training.RomanStefanyshyn;
 
 /**
- * @project Default (Template) Project
  * @author romanpz051@gmail.com on 24.03.2026.
+ * @project Default (Template) Project
  *///TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
