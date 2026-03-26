@@ -1,6 +1,9 @@
-package saucedemo.base;
+package base;
 
-import com.saucedemo.factory.WebDriverFactory;
+import com.epam.training.RomanStefanyshyn.factory.WebDriverFactory;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+import org.apache.logging.log4j.ThreadContext;
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
@@ -8,10 +11,12 @@ import org.testng.annotations.Parameters;
 
 public class BaseTest {
     protected WebDriver driver;
-
+    protected static final Logger logger = LogManager.getLogger(BaseTest.class);
     @Parameters("browser")
     @BeforeMethod
     public void setUp(String browser) {
+        ThreadContext.put("browserName", browser.toUpperCase());
+        logger.info("Starting setup for browser: " + browser);
         driver = WebDriverFactory.createDriver(browser);
         driver.get("https://www.saucedemo.com/");
     }
@@ -21,5 +26,6 @@ public class BaseTest {
         if (driver != null) {
             driver.quit();
         }
+        ThreadContext.clearAll();
     }
 }
