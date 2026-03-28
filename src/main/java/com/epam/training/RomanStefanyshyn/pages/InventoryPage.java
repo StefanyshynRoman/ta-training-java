@@ -11,10 +11,8 @@ public class InventoryPage extends BasePage {
         super(driver);
     }
 
-
     @Step("Add product to cart: {0}")
     public void addProductToCart(String productName) {
-        // Динамічний XPath для пошуку кнопки саме під вказаним товаром
         By addButton =By.xpath(String.format("//div[text()='%s']/ancestor::div[@class='inventory_item']//button", productName));
       click(addButton);
     }

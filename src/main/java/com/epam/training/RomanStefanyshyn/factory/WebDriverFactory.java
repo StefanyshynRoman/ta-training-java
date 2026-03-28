@@ -24,12 +24,10 @@ public class WebDriverFactory {
     private static WebDriver createChromeDriver() {
         ChromeOptions options = new ChromeOptions();
 
-        // Browser behavior
         options.addArguments("--incognito");
         options.addArguments("--disable-notifications");
         options.addArguments("--disable-popup-blocking");
 
-        // Disable password manager
         Map<String, Object> prefs = new HashMap<>();
         prefs.put("credentials_enable_service", false);
         prefs.put("profile.password_manager_enabled", false);

@@ -1,10 +1,10 @@
-package tests;
+package com.epam.training.RomanStefanyshyn.tests;
 
 import com.epam.training.RomanStefanyshyn.pages.*;
 import io.qameta.allure.Description;
 import org.testng.Assert;
 import org.testng.annotations.Test;
-import base.BaseTest;
+import com.epam.training.RomanStefanyshyn.base.BaseTest;
 
 public class CheckoutTest extends BaseTest {
 
@@ -85,4 +85,18 @@ public class CheckoutTest extends BaseTest {
         Assert.assertEquals(completePage.getSuccessMessage(), "Thank you for your order!", "Success message mismatch!");
     }
 
+ @Test
+ public void screenTest(){
+     String product = "Sauce Labs Backpack";
+     logger.info("Starting UC-1: for screen: {}", product);
+
+     LoginPage loginPage = new LoginPage(driver);
+     logger.info("Logging in as standard_user1");
+     loginPage.login("standard_user1", "secret_sauce1");
+     InventoryPage inventoryPage = new InventoryPage(driver);
+     logger.info("Adding {} to the cart", product);
+     inventoryPage.addProductToCart(product);
+     inventoryPage.goToCart();
+
+ }
 }

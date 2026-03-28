@@ -22,7 +22,6 @@ public class CheckoutOverviewPage extends BasePage {
         List<WebElement> prices = findAll(itemPrices);
         double sum = 0;
         for (WebElement priceElement : prices) {
-            // Видаляємо знак "$" і перетворюємо в число
             sum += Double.parseDouble(priceElement.getText().replace("$", ""));
         }
         return sum;
@@ -31,7 +30,6 @@ public class CheckoutOverviewPage extends BasePage {
     @Step("Get displayed subtotal amount")
     public double getSubtotal() {
         String subtotal = driver.findElement(subtotalLabel).getText();
-        // Текст виглядає як "Item total: $29.99"
         return Double.parseDouble(subtotal.split("\\$")[1]);
     }
 

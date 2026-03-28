@@ -6,7 +6,6 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
 public class LoginPage extends BasePage {
-    // CSS Локатори
     private By usernameInput = By.cssSelector("#user-name");
     private By passwordInput = By.cssSelector("#password");
     private By loginButton = By.cssSelector("#login-button");
