@@ -84,19 +84,22 @@ public class CheckoutTest extends BaseTest {
         logger.info("Completing order and validating success");
         Assert.assertEquals(completePage.getSuccessMessage(), "Thank you for your order!", "Success message mismatch!");
     }
+    /**
+     * for test screen
+     * need to be uncommented
+     */
 
- @Test
- public void screenTest(){
-     String product = "Sauce Labs Backpack";
-     logger.info("Starting UC-1: for screen: {}", product);
-
-     LoginPage loginPage = new LoginPage(driver);
-     logger.info("Logging in as standard_user1");
-     loginPage.login("standard_user1", "secret_sauce1");
-     InventoryPage inventoryPage = new InventoryPage(driver);
-     logger.info("Adding {} to the cart", product);
-     inventoryPage.addProductToCart(product);
-     inventoryPage.goToCart();
-
- }
+// @Test
+// public void screenTest(){
+//     String product = "Sauce Labs Backpack";
+//     logger.info("Starting UC-1: for screen: {}", product);
+//
+//     LoginPage loginPage = new LoginPage(driver);
+//     logger.info("Logging in as standard_user1");
+//     loginPage.login("standard_user1", "secret_sauce1");
+//     InventoryPage inventoryPage = new InventoryPage(driver);
+//     logger.info("Adding {} to the cart", product);
+//     inventoryPage.addProductToCart(product);
+//     inventoryPage.goToCart();
+//}
 }

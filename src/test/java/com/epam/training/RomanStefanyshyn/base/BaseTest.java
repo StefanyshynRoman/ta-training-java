@@ -17,8 +17,7 @@ public class BaseTest {
     @Parameters("browser")
     @BeforeMethod
     public void setUp(String browser) {
-        ThreadContext.put("browserName", browser.toUpperCase());
-        logger.info("Starting setup for browser: " + browser);
+        logger.info("Starting setup for browser: {}", browser);
         driver = WebDriverFactory.createDriver(browser);
         driver.get(ConfigReader.get("base.url"));    }
 
@@ -27,7 +26,6 @@ public class BaseTest {
         if (driver != null) {
             driver.quit();
         }
-        ThreadContext.clearAll();
     }
     public WebDriver getDriver() {
         return driver;

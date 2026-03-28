@@ -1,4 +1,4 @@
-package com.epam.training.RomanStefanyshyn.base;
+package com.epam.training.RomanStefanyshyn.pages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -16,7 +16,7 @@ public abstract class BasePage {
 
     public BasePage(WebDriver driver) {
         this.driver = driver;
-        this.wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        this.wait = new WebDriverWait(driver, Duration.ofSeconds(5));
     }
 
     protected WebElement find(By locator) {
