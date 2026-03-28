@@ -5,7 +5,7 @@
             <PatternLayout pattern="%d{HH:mm:ss.SSS} [%t] [%X{browserName}] %-5level %logger{36} - %msg%n"/>
         </Console>
         <File name="LogFile" fileName="target/logs/test_run.log" append="false">
-            <PatternLayout pattern="%d{yyyy-MM-dd HH:mm:ss.SSS} [%t] [%X{browserName}] %-5level %logger{36} - %msg%n"/>
+            <PatternLayout pattern="%d{HH:mm:ss} [%t] [%X{browser}] %-5level %logger{36} - %msg%n"/>
         </File>
     </Appenders>
     <Loggers>

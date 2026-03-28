@@ -13,8 +13,6 @@ public class TestListener implements ITestListener {
     public void onTestFailure(ITestResult result) {
 
         Object testClass = result.getInstance();
-
-        // 🔴 тут важливо: каст до BaseTest
         WebDriver driver = ((com.epam.training.RomanStefanyshyn.base.BaseTest) testClass).getDriver();
 
         if (driver != null) {
