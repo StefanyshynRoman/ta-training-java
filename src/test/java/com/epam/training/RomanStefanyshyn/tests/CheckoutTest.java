@@ -1,12 +1,12 @@
 package com.epam.training.RomanStefanyshyn.tests;
 
+import com.epam.training.RomanStefanyshyn.base.BaseTest;
 import com.epam.training.RomanStefanyshyn.pages.*;
 import com.epam.training.RomanStefanyshyn.utils.ConfigReader;
 import com.epam.training.RomanStefanyshyn.utils.TestData;
 import io.qameta.allure.Description;
 import org.testng.Assert;
 import org.testng.annotations.Test;
-import com.epam.training.RomanStefanyshyn.base.BaseTest;
 
 public class CheckoutTest extends BaseTest {
 
@@ -48,7 +48,7 @@ public class CheckoutTest extends BaseTest {
     @Test
     @Description("UC-2 Checkout Flow (several items)")
     public void testCheckoutMultipleItems() {
-        String product1 =TestData.PRODUCT_BACKPACK;
+        String product1 = TestData.PRODUCT_BACKPACK;
         String product2 = TestData.PRODUCT_BIKE_LIGHT;
         logger.info("Starting UC-2: Checkout Flow with multiple items: {}, {}", product1, product2);
 

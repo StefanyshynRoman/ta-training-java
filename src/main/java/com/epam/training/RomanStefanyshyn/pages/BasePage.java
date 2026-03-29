@@ -32,14 +32,17 @@ public abstract class BasePage {
         element.clear();
         element.sendKeys(text);
     }
+
     protected double parsePrice(String text) {
-        String normalized = text.replaceAll("[^0-9,\\.]", "")
+        String normalized = text.replaceAll("[^0-9,.]", "")
                 .replace(",", ".");
         return Double.parseDouble(normalized);
     }
+
     protected String getText(By locator) {
         return find(locator).getText();
     }
+
     protected List<WebElement> findAll(By locator) {
         return wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(locator));
     }

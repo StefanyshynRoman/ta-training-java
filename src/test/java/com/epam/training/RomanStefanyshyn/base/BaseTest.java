@@ -14,20 +14,24 @@ public class BaseTest {
     protected WebDriver driver;
 
     protected static final Logger logger = LogManager.getLogger(BaseTest.class);
+
     @Parameters("browser")
     @BeforeMethod
     public void setUp(String browser) {
         ThreadContext.put("browserName", browser.toUpperCase());
         logger.info("Starting setup for browser: {}", browser);
         driver = WebDriverFactory.createDriver(browser);
-        driver.get(ConfigReader.get("base.url"));    }
+        driver.get(ConfigReader.get("base.url"));
+    }
 
     @AfterMethod
     public void tearDown() {
         if (driver != null) {
             driver.quit();
         }
-        ThreadContext.clearAll();    }
+        ThreadContext.clearAll();
+    }
+
     public WebDriver getDriver() {
         return driver;
     }

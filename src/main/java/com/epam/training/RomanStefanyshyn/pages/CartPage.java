@@ -21,6 +21,6 @@ public class CartPage extends BasePage {
 
     @Step("Proceed to Checkout")
     public void proceedToCheckout() {
-      click(checkoutButton);
+        click(checkoutButton);
     }
 }
