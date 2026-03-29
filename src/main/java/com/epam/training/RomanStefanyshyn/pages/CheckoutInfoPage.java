@@ -5,10 +5,10 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
 public class CheckoutInfoPage extends BasePage {
-    private By firstNameInput = By.cssSelector("#first-name");
-    private By lastNameInput = By.cssSelector("#last-name");
-    private By zipInput = By.cssSelector("#postal-code");
-    private By continueButton = By.cssSelector("#continue");
+    private final By firstNameInput = By.cssSelector("#first-name");
+    private final By lastNameInput = By.cssSelector("#last-name");
+    private final By zipInput = By.cssSelector("#postal-code");
+    private final By continueButton = By.cssSelector("#continue");
 
     public CheckoutInfoPage(WebDriver driver) {
         super(driver);

@@ -12,7 +12,7 @@ import java.util.List;
 public abstract class BasePage {
 
     protected WebDriver driver;
-    private WebDriverWait wait;
+    private final WebDriverWait wait;
 
     public BasePage(WebDriver driver) {
         this.driver = driver;
@@ -32,7 +32,11 @@ public abstract class BasePage {
         element.clear();
         element.sendKeys(text);
     }
-
+    protected double parsePrice(String text) {
+        String normalized = text.replaceAll("[^0-9,\\.]", "")
+                .replace(",", ".");
+        return Double.parseDouble(normalized);
+    }
     protected String getText(By locator) {
         return find(locator).getText();
     }

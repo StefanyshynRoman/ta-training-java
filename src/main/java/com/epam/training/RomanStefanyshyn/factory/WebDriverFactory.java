@@ -6,6 +6,7 @@ import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
 
+import java.time.Duration;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -34,7 +35,7 @@ public class WebDriverFactory {
         options.setExperimentalOption("prefs", prefs);
 
         WebDriver driver = new ChromeDriver(options);
-        maximizeWindow(driver);
+        setupDriver(driver);
 
         return driver;
     }
@@ -49,12 +50,13 @@ public class WebDriverFactory {
         options.addPreference("browser.shell.checkDefaultBrowser", false);
 
         WebDriver driver = new FirefoxDriver(options);
-        maximizeWindow(driver);
+        setupDriver(driver);
 
         return driver;
     }
 
-    private static void maximizeWindow(WebDriver driver) {
+    private static void setupDriver(WebDriver driver) {
         driver.manage().window().maximize();
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
     }
 }

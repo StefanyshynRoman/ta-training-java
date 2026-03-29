@@ -57,7 +57,8 @@ src
  │    └── java
  │         ├── base           # BaseTest
  │         ├── listeners      # TestListener (screenshots)
- │         └── tests          # Test classes
+ │         ├── tests          # Test classes
+ │         └── utils          # TestDeta
  │
  └── resources
       └── testng.xml

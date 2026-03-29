@@ -5,8 +5,8 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
 public class CartPage extends BasePage {
-    private By cartItems = By.cssSelector(".inventory_item_name");
-    private By checkoutButton = By.cssSelector("#checkout");
+    private final By cartItems = By.cssSelector(".inventory_item_name");
+    private final By checkoutButton = By.cssSelector("#checkout");
 
     public CartPage(WebDriver driver) {
         super(driver);
